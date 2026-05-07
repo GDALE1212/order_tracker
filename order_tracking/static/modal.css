@@ -1,0 +1,110 @@
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); 
+    display: none; 
+    z-index: 999;
+}
+
+.modal.active, .modal-overlay.active {
+    display: block;
+}
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1000;
+    background-color: #fff;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    width: 500px;
+}
+
+.modal h3 {
+    background-color: #FF9F47;
+    color: white;
+    padding-left: 22px;
+    padding-right: 22px;
+    padding-top: 24px;
+    padding-bottom: 24px;
+    margin: -22px -22px 20px -22px; 
+    text-align: left;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+}
+
+.modal form {
+    display: grid;
+    grid-template-columns: 1fr 2fr; 
+    gap: 15px;
+}
+
+.modal label {
+    margin-top: 16px;
+    grid-column: span 1;
+    font-weight: bold;
+}
+
+.modal input,
+.modal select {
+    grid-column: span 1;
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+    height: 40px;
+}
+
+.modal textarea,
+.modal .full-width {
+    grid-column: span 2; 
+}
+
+.modal-buttons {
+    margin-right: -12px;
+    grid-column: span 2; 
+    display: flex;
+    justify-self: end;
+    gap: 5px;
+    margin-top: 20px;
+}
+
+.modal-buttons button {
+    width: 120px;
+    padding: 10px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.modal-buttons button:first-child {
+    background-color: #727272;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.modal-buttons button:last-child {
+    background-color: green;
+    color: white;
+    border: none;
+    border-radius: 5px;
+}
+
+.modal-buttons button:first-child:hover {
+    background-color: #5e5e5e; 
+    transform: scale(1.05);    
+}
+
+.modal-buttons button:last-child:hover {
+    background-color: #006400; 
+    transform: scale(1.05);  
+}

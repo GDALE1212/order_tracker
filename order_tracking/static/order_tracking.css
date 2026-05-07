@@ -1,0 +1,92 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #F0FBFF; 
+    color: #FF9F47;
+    font-size: 16px;
+    padding: 20px;
+}
+
+/* Navigation bar styling */
+nav {
+    background-color: #FF9F47;
+    padding: 10px;
+    text-align: center;
+    /* Use flexbox to make it responsive */
+    display: flex;
+    justify-content: center; 
+    flex-wrap: wrap; 
+}
+
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 5px; 
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    flex: 1; 
+    min-width: 120px; 
+    text-align: center; 
+}
+
+nav a:hover {
+    background-color: #FFB703; 
+}
+
+/* Tracking container styling */
+.tracking-container {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 12px;
+    max-width: 90%; 
+    margin: 20px auto;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h2 {
+    color: #bc9021;
+    margin-bottom: 10px;
+}
+
+/* Notification styling */
+.notification {
+    background-color: #E8F4F8;
+    padding: 10px;
+    border-radius: 8px;
+    color: #FF9F47;
+    margin-bottom: 20px;
+}
+
+/* Tracking table styling */
+#trackingTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 10px;
+}
+
+#trackingTable th, #trackingTable td {
+    border: 1px solid #DDE3E7;
+    padding: 12px;
+    text-align: center;
+}
+
+#trackingTable th {
+    background-color: #FF9F47;
+    color: #FFFFFF;
+}
+
+#trackingTable tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+#trackingTable tr:hover {
+    background-color: #FFB703;
+}

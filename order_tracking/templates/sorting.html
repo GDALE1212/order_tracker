@@ -1,0 +1,94 @@
+<div style="display: flex; align-items: center; gap: 10px; margin-bottom: 20px;"> 
+  <div class="sorting-dropdown">
+    <select id="sort-options" onchange="handleSortChange()" style="height: 40px; width: 180px; border-radius: 5px; padding: 5px; border: 1px solid #ccc; background-color: #FFD159;">
+      <option value="" disabled selected>Sort by</option>
+      <option value="pickup_date">Pickup Date</option>
+      <option value="delicacy">Delicacy</option>
+      <option value="status">Status</option>
+    </select>
+  </div>
+
+  <div class="datacount-dropdown">
+    <select id="data-count" onchange="refreshComplexities()" style="height: 40px; width: 180px; border-radius: 5px; padding: 5px; border: 1px solid #ccc; background-color: #FFD159;">
+      <option value="" disabled selected>Data Count</option>
+      <option value="100">100</option>
+      <option value="300">300</option>
+      <option value="500">500</option>
+      <option value="1000">1000</option>
+    </select>
+  </div>
+
+  <div class="sortingalgo-dropdown">
+    <select id="sorting-algo" onchange="sortingAlgorithym()" style="height: 40px; width: 180px; border-radius: 5px; padding: 5px; border: 1px solid #ccc; background-color: #FFD159;">
+      <option value="" disabled selected>Sorting Algorithm</option>
+      <option value="comb_sort">Comb Sort</option>
+      <option value="cycle_sort">Cycle Sort</option>
+      <option value="quick_sort">Quick Sort</option>
+    </select>
+  </div>
+</div>
+
+<script>
+  function handleSortChange() {
+    const selectedOption = document.getElementById("sort-options").value;
+    const dataCount = document.getElementById("data-count").value;
+    const sortingAlgo = document.getElementById("sorting-algo").value;
+
+    if (selectedOption && dataCount && sortingAlgo) {
+      const baseUrl = "{{ url_for('order_management') }}";
+      window.location.href = `${baseUrl}?sort_by=${selectedOption}&data_count=${dataCount}&sorting_algo=${sortingAlgo}`;
+    }
+  }
+
+  window.onload = function () {
+    const urlParams = new URLSearchParams(window.location.search);
+    const sortBy = urlParams.get("sort_by");
+    const dataCount = urlParams.get("data_count");
+    const sortingAlgo = urlParams.get("sorting_algo");
+
+    if (sortBy) document.getElementById("sort-options").value = sortBy;
+    if (dataCount) document.getElementById("data-count").value = dataCount;
+    if (sortingAlgo) document.getElementById("sorting-algo").value = sortingAlgo;
+  };
+
+  function refreshComplexities() {
+    if (!document.getElementById("sort-options").value) {
+      alert("Please select a sort option first");
+      document.getElementById("data-count").value = "";
+    } else {
+      handleSortChange();
+    }
+  }
+
+  async function sortingAlgorithym() {
+    const sortingAlgo = document.getElementById("sorting-algo").value;
+    switch (sortingAlgo) {
+      case "comb_sort":
+        await combSort();
+        break;
+      case "cycle_sort":
+        await cycleSort();
+        break;
+      case "quick_sort":
+        await quickSort();
+        break;
+      default:
+        alert("Invalid sorting algorithm");
+    }
+  }
+
+  async function combSort() {
+    alert("Executing Comb Sort...");
+    // Comb Sort logic here
+  }
+
+  async function cycleSort() {
+    alert("Executing Cycle Sort...");
+    // Cycle Sort logic here
+  }
+
+  async function quickSort() {
+    alert("Executing Quick Sort...");
+    // Quick Sort logic here
+  }
+</script>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+   <head>
+      <meta charset="UTF-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Order Tracking and Management</title>
+      <link rel="stylesheet" href="{{ url_for('static', filename='index.css') }}">
+
+      <script>
+         function hideErrorOnInput() {
+            const inputs = document.querySelectorAll("#loginForm input");
+            const errorDiv = document.querySelector(".error-messages");
+            inputs.forEach(input => {
+               input.addEventListener("input", () => {
+                  if (errorDiv) {
+                     errorDiv.innerHTML = "";
+                  }
+               });
+            });
+         }
+
+         document.addEventListener("DOMContentLoaded", hideErrorOnInput);
+      </script>
+      <style>
+         .error-messages {
+            height: 20px; 
+            line-height: 20px; 
+            color: red;
+            margin: 0;
+         }
+      </style>
+   </head>
+   <body>
+      <div class="main-box">
+
+         <!-- Left Section -->
+         <div class="left-section">
+            <img src="{{ url_for('static', filename='images/casa_delicia_logo.png') }}" alt="Logo" class="logo">
+            <h1 class="welcome">WELCOME TO</h1>
+            <h2 class="system-name">Order Tracking and Management System</h2>
+            <p class="description">The power to manage orders is now in your hands.</p>
+         </div>
+
+         <!-- Right Section -->
+         <div class="right-section">
+            
+            <!-- Display error message if login fails -->
+            {% with messages = get_flashed_messages() %}
+            <div class="error-messages">
+               {% if messages %}
+                  {% for message in messages %}
+                     <p style="margin: 0;">{{ message }}</p>
+                  {% endfor %}
+               {% endif %}
+            </div>
+            {% endwith %}
+
+
+            <h2 class="login-title">Login</h2>
+            <form id="loginForm" action="{{ url_for('login') }}" method="POST">
+                  <label for="username">Username:</label>
+                  <input type="text" id="username" name="username" class="input-box" placeholder="Enter username" required>
+                  <label for="password">Password:</label>
+                  <input type="password" id="password" name="password" class="input-box" placeholder="Enter password" required>
+                  <button type="submit" class="login-button">Login</button>
+               </form>
+         </div>
+      </div>
+   </body>
+</html>

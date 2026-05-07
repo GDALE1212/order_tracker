@@ -1,0 +1,46 @@
+.dropdown {
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  background-color: #ffcd4f;
+  font-size: 16px; 
+  color: #333; 
+  cursor: pointer;
+  width: 150px; 
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  outline: none;
+  position: relative;
+}
+
+.dropdown option:hover {
+  background-color: #ffffff;
+  color: white;
+}
+
+.dropdown:focus {
+  border-color: #555;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Sort by Dropdown */
+.sorting-dropdown {
+  margin: 10px 0;
+  position: relative;
+  display: inline-block;
+}
+
+/* Data Count Dropdown */
+.datacount-dropdown {
+  margin: 10px 0;
+  position: relative;
+  display: inline-block;
+}
+
+/* Sorting Algorithm Dropdown */
+.sortingalgo-dropdown {
+  margin: 10px 0;
+  position: relative;
+  display: inline-block;
+}

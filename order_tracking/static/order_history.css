@@ -1,0 +1,99 @@
+/* Reset styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: #fff4ee;
+    color: #000000;
+    font-size: 16px;
+    padding: 20px;
+}
+
+/* Navigation bar styling */
+nav {
+    background-color: #FF9F47;
+    padding: 10px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+nav a {
+    color: #FFFFFF;
+    text-decoration: none;
+    margin: 5px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+    flex: 1;
+    min-width: 120px;
+    text-align: center;
+}
+
+nav a:hover {
+    background-color: rgba(255, 180, 137, 0.338);
+}
+
+/* Main container styling */
+.history-container {
+    background-color: #FFFFFF;
+    padding: 30px;
+    border-radius: 12px;
+    width: 80%; /* Adjust width for centering */
+    margin: 20px auto; /* Centers the container */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+
+/* Headings */
+h2 {
+    color: #966333;
+    margin-bottom: 10px;
+    text-align: center; /* Centers the heading */
+}
+
+/* Button styling */
+button {
+    background-color: #FB8500;
+    color: #FFFFFF;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #FFB703;
+}
+
+/* History Table styling */
+#historyTable {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+}
+
+#historyTable th, #historyTable td {
+    padding: 12px;
+    border: 1px solid #DDE3E7;
+    text-align: center;
+}
+
+#historyTable th {
+    background-color: #FF9F47;
+    color: #FFFFFF;
+}
+
+#historyTable tr:nth-child(even) {
+    background-color: #ffffff;
+}
+
+#historyTable tr:hover {
+    background-color: rgba(255, 180, 137, 0.338);
+}

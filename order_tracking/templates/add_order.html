@@ -1,0 +1,44 @@
+<button type="button" id="placeOrderBtn" class="fab" onclick=showOrderModal()>
+    <span class="plus-icon">+</span>
+</button>
+
+<div class="modal-overlay" id="orderModalOverlay" style="display: none;"></div>
+
+<div class="modal" id="placeOrderModal">
+    <h3>Place New Order</h3>
+    <form id="placeOrderForm">        
+        <label for="customerName">Customer Name:</label>
+        <input type="text" id="customerName" required>
+
+        <label for="contactNumber">Contact Number:</label>
+        <input type="text" id="contactNumber" required>
+
+        <label for="address">Address:</label>
+        <input type="text" id="address" required>
+
+        <label for="pickupPlace">Pickup Place:</label>
+        <input type="text" id="pickupPlace" required>
+
+        <label for="pickupDate">Pickup Date:</label>
+        <input type="date" id="pickupDate" required>
+
+        <label for="delicacy">Delicacy:</label>
+        {% include 'delicacy_dropdown.html' %}
+
+        <label for="quantity">Quantity:</label>
+        <input type="number" id="quantity" required>
+
+        <label for="container">Container:</label>
+        {% include 'container_dropdown.html' %}
+
+        <label for="specialRequest">Special Request:</label>
+        <input type="text" id="specialRequest">
+
+        <div class="modal-buttons">
+            <button type="button" onclick="closeOrderModal()">Cancel</button>
+            <button type="button" id="saveAddOrderButton" onclick="createOrder()">Save</button>
+        </div>
+        
+    </form>
+</div>
+</div>
